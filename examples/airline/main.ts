@@ -1,5 +1,5 @@
+import { runLoop } from "swarm-ai";
 import { triageAgent } from "./configs/agents";
-import { runDemoLoop } from "./util/runDemoLoop";
 
 const contextVariables = {
   customer_context: `Customer details:
@@ -11,4 +11,4 @@ Flight 1919 from LGA to LAX
 ...`,
 };
 
-runDemoLoop(triageAgent, { contextVariables, debug: true });
+runLoop(triageAgent, contextVariables, true);
