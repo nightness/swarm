@@ -1,11 +1,30 @@
 {
-  "name": "swarm",
-  "version": "1.0.0",
+  "name": "swarm-ai",
+  "version": "0.0.1",
+  "description": "A TypeScript port of OpenAI's swarm project. https://github.com/openai/swarm",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nightness/swarm-ai.git"
+  },
+  "keywords": [
+    "swarm",
+    "typescript",
+    "ai",
+    "openai"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nightness/swarm-ai/issues"
+  },
+  "homepage": "https://github.com/nightness/swarm-ai",
   "devDependencies": {
     "@types/node": "^18.0.0",
     "typescript": "^5.0.0"
