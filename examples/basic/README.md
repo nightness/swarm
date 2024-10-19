@@ -1,8 +1,12 @@
-# Swarm Basic
+Here is the updated README based on your provided `package.json` scripts:
 
-This folder contains basic examples demonstrating the core capabilities of Swarm. These examples show the simplest implementations of Swarm, with one input message and a corresponding output. The `simple_loop_no_helpers.ts` example has a while loop to demonstrate how to create an interactive Swarm session.
+---
 
-### Examples
+# Swarm Basic (TypeScript)
+
+This folder contains basic examples demonstrating the core capabilities of Swarm-TS, a TypeScript port of OpenAI's [Swarm](https://github.com/openai/swarm) project. These examples showcase the simplest implementations of Swarm, with one input message and a corresponding output. The `simple_loop_no_helpers.ts` example includes a while loop to demonstrate how to create an interactive Swarm session.
+
+## Examples
 
 1. **agent_handoff.ts**
 
@@ -31,8 +35,55 @@ This folder contains basic examples demonstrating the core capabilities of Swarm
 
 ## Running the Examples
 
-To run any of the examples, use the following command:
+You can run any of the examples by using the following commands from the `package.json` scripts:
+
+### Running individual examples
+
+- **Agent Handoff**: 
+  ```bash
+  npm run agent_handoff
+  ```
+
+- **Bare Minimum**: 
+  ```bash
+  npm run bare_minimum
+  ```
+
+- **Context Variables**: 
+  ```bash
+  npm run context_variables
+  ```
+
+- **Function Calling**: 
+  ```bash
+  npm run function_calling
+  ```
+
+- **Simple Loop (No Helpers)**: 
+  ```bash
+  npm run simple_loop_no_helpers
+  ```
+
+### Running manually with `ts-node`
+
+Alternatively, you can also run any of the examples directly using `ts-node`:
 
 ```bash
-ts-node <example_name>.ts
+ts-node src/<example_name>.ts
 ```
+
+For example:
+
+```bash
+ts-node src/agent_handoff.ts
+```
+
+## Prerequisites
+
+Make sure you have installed the necessary dependencies:
+
+```bash
+npm install
+```
+
+This will install the `swarm-ai` library, along with other required development dependencies like `typescript` and `ts-node`.
