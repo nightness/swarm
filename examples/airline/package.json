@@ -1,0 +1,19 @@
+{
+    "name": "swarm-airline-example",
+    "description": "A TypeScript port of OpenAI's Swarm Airline example",
+    "scripts": {  
+      "build": "tsc",
+      "main": "ts-node src/main.ts",
+      "evals": "ts-node src/evals/function_evals.ts"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "@types/node": "^18.0.0",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.0.0"
+    },
+    "dependencies": {
+      "swarm-ai": "file:../../"
+    }
+  }
+  
