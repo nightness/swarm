@@ -1,6 +1,7 @@
 {
   "name": "swarm-ai-example-basic",
   "description": "A TypeScript port of OpenAI's swarm project. https://github.com/openai/swarm",
+  "license": "MIT",
   "scripts": {
     "agent_handoff": "ts-node src/agent_handoff.ts",
     "bare_minimum": "ts-node src/bare_minimum.ts",
