@@ -1,0 +1,18 @@
+{
+    "name": "swarm-personal-shopper",
+    "description": "A TypeScript port of OpenAI's Swarm Personal Shopper example",
+    "scripts": {
+      "main": "ts-node ./main.ts"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "@types/node": "^18.0.0",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.0.0",
+      "sqlite3": "^5.0.2"
+    },
+    "dependencies": {
+      "swarm-ai": "file:../../"
+    }
+  }
+  
