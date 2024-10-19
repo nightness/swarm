@@ -1,0 +1,19 @@
+{
+  "name": "swarm-ai-example-basic",
+  "description": "A TypeScript port of OpenAI's swarm project. https://github.com/openai/swarm",
+  "scripts": {
+    "agent_handoff": "ts-node src/agent_handoff.ts",
+    "bare_minimum": "ts-node src/bare_minimum.ts",
+    "context_variables": "ts-node src/context_variables.ts",
+    "function_calling": "ts-node src/function_calling.ts",
+    "simple_loop_no_helpers": "ts-node src/simple_loop_no_helpers.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "swarm-ai": "file:../../"
+  }
+}
