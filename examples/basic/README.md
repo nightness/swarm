@@ -4,7 +4,7 @@ Here is the updated README based on your provided `package.json` scripts:
 
 # Swarm Basic (TypeScript)
 
-This folder contains basic examples demonstrating the core capabilities of Swarm-TS, a TypeScript port of OpenAI's [Swarm](https://github.com/openai/swarm) project. These examples showcase the simplest implementations of Swarm, with one input message and a corresponding output. The `simple_loop_no_helpers.ts` example includes a while loop to demonstrate how to create an interactive Swarm session.
+This folder contains basic examples demonstrating the core capabilities of Swarm, a TypeScript port of OpenAI's [Swarm](https://github.com/openai/swarm) project. These examples showcase the simplest implementations of Swarm, with one input message and a corresponding output. The `simple_loop_no_helpers.ts` example includes a while loop to demonstrate how to create an interactive Swarm session.
 
 ## Examples
 
