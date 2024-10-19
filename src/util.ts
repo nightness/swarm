@@ -1,4 +1,5 @@
-import { AgentFunction } from "./types";
+import { Swarm } from "./core";
+import { Agent, AgentFunction, ChatCompletionMessage } from "./types";
 
 export function debugPrint(debug: boolean, ...args: any[]): void {
   if (!debug) return;
@@ -56,4 +57,63 @@ export function functionToJson(
       },
     },
   };
+}
+
+export async function runLoop(
+  agent: Agent,
+  initialContextVariables: Record<string, any> = {},
+  debug: boolean = false
+): Promise<void> {
+  const contextVariables = { ...initialContextVariables };
+  const history: ChatCompletionMessage[] = [];
+
+  while (true) {
+    const userInput = await promptUser("> ");
+    if (userInput.toLowerCase() === "exit") break;
+
+    history.push({ role: "user", content: userInput });
+
+    const swarm = new Swarm();
+    const response = await swarm.run({
+      agent,
+      messages: history,
+      context_variables: contextVariables,
+      debug,
+    });
+
+    // Display the response
+    for (const message of response.messages) {
+      console.log(`${message.sender}[${message.role}]: ${message.content}`);
+    }
+
+    // Update history and context variables for the next iteration
+    history.push(...response.messages);
+    Object.assign(contextVariables, response.context_variables);
+  }
+}
+
+function promptUserBasic(question: string): Promise<string> {
+  return new Promise((resolve) => {
+    process.stdout.write(question);
+    process.stdin.resume();
+    process.stdin.setEncoding("utf8");
+    process.stdin.once("data", (data) => {
+      resolve(data.toString().trim()); // Convert Buffer to string and then trim
+    });
+  });
+}
+
+// Helper to prompt user input in the terminal
+function promptUser(query: string): Promise<string> {
+  const rl = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  return new Promise((resolve) =>
+    rl.question(query, (answer: string) => {
+      rl.close();
+      resolve(answer);
+    })
+  );
 }
