@@ -159,6 +159,100 @@ export class Swarm {
     return partialResponse;
   }
 
+  async run({
+    agent,
+    messages,
+    context_variables = {},
+    modelOverride = null,
+    stream = false,
+    debug = false,
+    maxTurns = Infinity,
+    executeTools = true,
+  }: {
+    agent: Agent;
+    messages: ChatCompletionMessage[];
+    context_variables?: Record<string, any>;
+    modelOverride?: string | null;
+    stream?: boolean;
+    debug?: boolean;
+    maxTurns?: number;
+    executeTools?: boolean;
+  }): Promise<Response> {
+    if (stream) {
+      const streamIterator = this.runAndStream(
+        agent,
+        messages,
+        context_variables,
+        modelOverride,
+        debug,
+        maxTurns,
+        executeTools
+      );
+
+      let finalResponse: Response | null = null;
+
+      for await (const chunk of streamIterator) {
+        if ("response" in chunk) {
+          finalResponse = chunk.response;
+        } else {
+          // Handle streaming chunk (for your specific use case)
+          console.log(chunk);
+        }
+      }
+
+      return finalResponse!; // Ensure we return the final response when streaming is done
+    }
+
+    let activeAgent = agent;
+    const history = [...messages];
+    const contextVars = { ...context_variables };
+    const initLen = messages.length;
+
+    while (history.length - initLen < maxTurns && activeAgent) {
+      const completion = await this.getChatCompletion(
+        activeAgent,
+        history,
+        contextVars,
+        modelOverride,
+        stream,
+        debug
+      );
+
+      const message = completion.choices[0].message;
+      history.push(message);
+
+      if (!message.tool_calls || !executeTools) {
+        break;
+      }
+
+      const toolCalls =
+        message.tool_calls?.map((tc: any) => ({
+          id: tc.id,
+          function: tc.function,
+        })) || [];
+
+      const partialResponse = await this.handleToolCalls(
+        toolCalls,
+        activeAgent.functions,
+        contextVars,
+        debug
+      );
+
+      history.push(...partialResponse.messages);
+      Object.assign(contextVars, partialResponse.context_variables);
+
+      if (partialResponse.agent) {
+        activeAgent = partialResponse.agent;
+      }
+    }
+
+    return new Response({
+      messages: history.slice(initLen),
+      agent: activeAgent,
+      context_variables: contextVars,
+    });
+  }
+
   async *runAndStream(
     agent: Agent,
     messages: ChatCompletionMessage[],
@@ -210,7 +304,7 @@ export class Swarm {
 
       // Convert tool calls to objects
       const toolCalls =
-        message.tool_calls?.map((tc) => ({
+        message.tool_calls?.map((tc: any) => ({
           id: tc.id,
           function: {
             arguments: tc.function.arguments,
