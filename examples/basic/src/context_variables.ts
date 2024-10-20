@@ -1,4 +1,4 @@
-import { Swarm, Agent } from "swarm-ai";
+import { Swarm, Agent } from "@josh.guyette/swarm";
 
 const client = new Swarm();
 

@@ -2,27 +2,27 @@
 
 ![Swarm Logo](assets/logo.png)
 
-# swarm-ai (Experimental, Educational)
+# swarm (Experimental, Educational)
 
 This is a TypeScript port of OpenAI's [Swarm](https://github.com/openai/swarm) project, designed for exploring ergonomic, lightweight multi-agent orchestration. This package provides TypeScript support for users interested in building systems inspired by the original Python version. Swarm is an educational framework focused on demonstrating multi-agent orchestration patterns such as handoffs and routines.
 
 > [!WARNING]
-> swarm-ai is experimental and intended for educational purposes only. It is not recommended for production use, and there is no official support. Contributions are welcome, but PRs and issues may not be reviewed.
+> swarm is experimental and intended for educational purposes only. It is not recommended for production use, and there is no official support. Contributions are welcome, but PRs and issues may not be reviewed.
 
 This project is a port of OpenAI's original Python-based [Swarm](https://github.com/openai/swarm). If you are interested in the original implementation, visit the [Swarm GitHub repository](https://github.com/openai/swarm).
 
 ## Install
 
-To install the swarm-ai package, use npm:
+To install the swarm package, use npm:
 
 ```bash
-npm install swarm-ai
+npm install @josh.guyette/swarm
 ```
 
 Or with yarn:
 
 ```bash
-yarn add swarm-ai
+yarn add @josh.guyette/swarm
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ yarn add swarm-ai
 Here is a simple usage example that demonstrates how to create a basic agent and run a chat completion with agent handoff:
 
 ```typescript
-import { Swarm, Agent } from 'swarm-ai';
+import { Swarm, Agent } from '@josh.guyette/swarm';
 
 const client = new Swarm();
 
@@ -77,19 +77,19 @@ What can I assist?
 
 # Overview
 
-swarm-ai replicates the concepts introduced by OpenAI's Swarm: coordinating agents and managing handoffs between them. Agents encapsulate instructions and functions, allowing seamless transitions in conversations or workflows.
+swarm replicates the concepts introduced by OpenAI's Swarm: coordinating agents and managing handoffs between them. Agents encapsulate instructions and functions, allowing seamless transitions in conversations or workflows.
 
-The goal of swarm-ai is to provide a lightweight, customizable framework that scales well and is easy to test. While the original Swarm was written in Python, this package offers a fully TypeScript-native experience.
+The goal of swarm is to provide a lightweight, customizable framework that scales well and is easy to test. While the original Swarm was written in Python, this package offers a fully TypeScript-native experience.
 
 ## Why Swarm
 
-swarm-ai, like its Python counterpart, is suited for systems that require dynamic coordination between agents, with capabilities beyond simple prompt-based solutions. It emphasizes ergonomic patterns for managing multiple agents and functions.
+swarm, like its Python counterpart, is suited for systems that require dynamic coordination between agents, with capabilities beyond simple prompt-based solutions. It emphasizes ergonomic patterns for managing multiple agents and functions.
 
 # Examples
 
-- [`basic`](https://github.com/nightness/swarm-ai/tree/main/examples/basic): Simple examples of fundamentals like setup, function calling, handoffs, and context variables.
-- [`airline`](https://github.com/nightness/swarm-ai/tree/main/examples/airline): A multi-agent setup for handling different customer service requests in an airline context.
-- [`personal_shopper`](https://github.com/nightness/swarm-ai/tree/main/examples/personal-shopper): A personal shopping agent that helps with making sales and processing refunds.
+- [`basic`](https://github.com/nightness/swarm/tree/main/examples/basic): Simple examples of fundamentals like setup, function calling, handoffs, and context variables.
+- [`airline`](https://github.com/nightness/swarm/tree/main/examples/airline): A multi-agent setup for handling different customer service requests in an airline context.
+- [`personal_shopper`](https://github.com/nightness/swarm/tree/main/examples/personal-shopper): A personal shopping agent that helps with making sales and processing refunds.
 - [`triage_agent`](https://github.com/openai/swarm/tree/main/examples/triage_agent): Example of setting up a basic triage step to hand off to the right agent. (Not ported yet)
 - [`support_bot`](https://github.com/openai/swarm/tree/main/examples/support_bot): A customer service bot that includes a user interface agent and a help center agent with several tools. (Not ported yet)
 - [`weather_agent`](https://github.com/openai/swarm/tree/main/examples/weather_agent): Function calling example using a weather agent. (Not ported yet)
@@ -98,10 +98,10 @@ swarm-ai, like its Python counterpart, is suited for systems that require dynami
 
 ## Running Swarm
 
-To use swarm-ai, instantiate a `Swarm` client and run it with an initial `Agent`:
+To use swarm, instantiate a `Swarm` client and run it with an initial `Agent`:
 
 ```typescript
-import { Swarm } from 'swarm-ai';
+import { Swarm } from '@josh.guyette/swarm';
 
 const client = new Swarm();
 ```
@@ -161,16 +161,6 @@ The streaming API follows the same event structure as OpenAI’s Chat Completion
 # Evaluations
 
 Evaluations are a critical part of testing the performance of multi-agent systems. You can create your own evaluation suites, or refer to the examples in the original [Swarm repository](https://github.com/openai/swarm) for inspiration.
-
-# Utils
-
-swarm-ai also supports running a simple REPL interface via the `run_demo_loop` utility, which can be used for testing.
-
-```typescript
-import { run_demo_loop } from 'swarm-ai/repl';
-
-run_demo_loop(agent, { stream: true });
-```
 
 # Core Contributors
 

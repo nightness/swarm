@@ -1,4 +1,4 @@
-import { Agent, Response, Swarm } from "swarm-ai";
+import { Agent, Response, Swarm } from "@josh.guyette/swarm";
 import * as fs from "fs";
 import * as path from "path";
 

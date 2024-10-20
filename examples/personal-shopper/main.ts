@@ -1,4 +1,4 @@
-import { Agent, AgentFunction, runLoop } from 'swarm-ai';
+import { Agent, AgentFunction, runLoop } from '@josh.guyette/swarm';
 import * as db from './database';
 
 interface PurchaseRow {

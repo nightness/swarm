@@ -1,4 +1,4 @@
-import { runLoop } from "swarm-ai";
+import { runLoop } from "@josh.guyette/swarm";
 import { triageAgent } from "./configs/agents";
 
 const contextVariables = {

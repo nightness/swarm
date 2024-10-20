@@ -1,5 +1,5 @@
 {
-  "name": "swarm-ai-example-basic",
+  "name": "swarm-example-basic",
   "description": "A TypeScript port of OpenAI's swarm project. https://github.com/openai/swarm",
   "license": "MIT",
   "scripts": {
@@ -15,6 +15,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "swarm-ai": "file:../../"
+    "@josh.guyette/swarm": "file:../../"
   }
 }

@@ -1,0 +1,9 @@
+{
+    "overwrite": true,
+    "source-only": true,
+    "exclude": [
+        "assets/**/**",
+        "examples/**/**",
+        "LICENSE"        
+    ]
+}

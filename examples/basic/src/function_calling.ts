@@ -1,4 +1,4 @@
-import { Swarm, Agent, ChatCompletionMessage } from "swarm-ai";
+import { Swarm, Agent, ChatCompletionMessage } from "@josh.guyette/swarm";
 
 const client = new Swarm();
 

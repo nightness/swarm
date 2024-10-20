@@ -86,4 +86,4 @@ Make sure you have installed the necessary dependencies:
 npm install
 ```
 
-This will install the `swarm-ai` library, along with other required development dependencies like `typescript` and `ts-node`.
+This will install the `@josh.guyette/swarm` library, along with other required development dependencies like `typescript` and `ts-node`.

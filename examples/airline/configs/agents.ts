@@ -1,4 +1,4 @@
-import { Agent } from "swarm-ai";
+import { Agent } from "@josh.guyette/swarm";
 import {
   escalateToAgent,
   validToChangeFlight,

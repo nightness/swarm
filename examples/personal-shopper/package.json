@@ -12,7 +12,7 @@
       "sqlite3": "^5.0.2"
     },
     "dependencies": {
-      "swarm-ai": "file:../../"
+      "@josh.guyette/swarm": "file:../../"
     }
   }
   
