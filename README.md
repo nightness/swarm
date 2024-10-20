@@ -87,14 +87,12 @@ swarm-ai, like its Python counterpart, is suited for systems that require dynami
 
 # Examples
 
-Check out the original Swarm's `/examples` directory for inspiration! Here are some use cases that demonstrate multi-agent orchestration:
-
-- [`basic`](https://github.com/openai/swarm/tree/main/examples/basic): Simple examples of fundamentals like setup, function calling, handoffs, and context variables.
-- [`triage_agent`](https://github.com/openai/swarm/tree/main/examples/triage_agent): Example of setting up a basic triage step to hand off to the right agent.
-- [`weather_agent`](https://github.com/openai/swarm/tree/main/examples/weather_agent): Function calling example using a weather agent.
-- [`airline`](https://github.com/openai/swarm/tree/main/examples/airline): A multi-agent setup for handling different customer service requests in an airline context.
-- [`support_bot`](https://github.com/openai/swarm/tree/main/examples/support_bot): A customer service bot that includes a user interface agent and a help center agent with several tools.
-- [`personal_shopper`](https://github.com/openai/swarm/tree/main/examples/personal_shopper): A personal shopping agent that helps with making sales and processing refunds.
+- [`basic`](https://github.com/nightness/swarm-ai/tree/main/examples/basic): Simple examples of fundamentals like setup, function calling, handoffs, and context variables.
+- [`airline`](https://github.com/nightness/swarm-ai/tree/main/examples/airline): A multi-agent setup for handling different customer service requests in an airline context.
+- [`personal_shopper`](https://github.com/nightness/swarm-ai/tree/main/examples/personal-shopper): A personal shopping agent that helps with making sales and processing refunds.
+- [`triage_agent`](https://github.com/openai/swarm/tree/main/examples/triage_agent): Example of setting up a basic triage step to hand off to the right agent. (Not ported yet)
+- [`support_bot`](https://github.com/openai/swarm/tree/main/examples/support_bot): A customer service bot that includes a user interface agent and a help center agent with several tools. (Not ported yet)
+- [`weather_agent`](https://github.com/openai/swarm/tree/main/examples/weather_agent): Function calling example using a weather agent. (Not ported yet)
 
 # Documentation
 
